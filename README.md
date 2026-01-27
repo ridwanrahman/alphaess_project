@@ -14,6 +14,7 @@ TUI project for my solar stuff
 ### Textual tutorial
 Textual has many commands that can be used to create TUI applications. Here are some useful links to get started:
 1. textual serve static_and_label_tcss.py -> this will run the textual app and serve it on a local web server
-
+2. To enable hot reloading, it is possible to use watchfiles. A command like this might work:
+    `uv run watchfiles "textual run --dev docker_widget.py" .`
 
 
