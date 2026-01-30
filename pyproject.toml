@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "httpx>=0.28.1",
+    "pydevd-pycharm~=252.28238.7",
     "textual>=7.4.0",
     "textual-dev>=1.8.0",
 ]

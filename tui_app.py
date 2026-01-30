@@ -4,6 +4,7 @@ from textual.app import App, ComposeResult
 from textual.screen import ModalScreen
 from textual.widgets import Static, Button, Header, Footer
 from textual.containers import Container
+from textual.color import Color
 
 class WelcomeScreen(ModalScreen):
 
@@ -28,7 +29,12 @@ class MyApp(App):
         ("d", "randon_action", "BITE ME"),
     ]
     def compose(self) -> ComposeResult:
-        yield Static("Main dashboard content")
+        self.widget = Static("Textual")
+        self.widget2 = Static("Rocks!")
+        self.widget3 = Static("!!!")
+        yield self.widget
+        yield self.widget2
+        yield self.widget3
         yield Header()
         yield Footer()
 
@@ -36,7 +42,13 @@ class MyApp(App):
         self.app.log("Welcome screen dismissed!")
 
     def on_mount(self) -> None:
-        self.push_screen(WelcomeScreen())
+        # self.push_screen(WelcomeScreen())
+        self.widget.styles.background = "lime"
+        self.widget.styles.border = ("heavy", "white")
+        self.widget2.styles.background = "hsl(150,42.9%,49.4%)"
+        self.widget2.styles.color = "blue"
+        self.widget3.styles.background = Color(191, 78, 96)
+
 
     def action_toggle_dark(self) -> None:
         """An action to toggle dark mode."""
