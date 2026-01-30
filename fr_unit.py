@@ -1,5 +1,3 @@
-from tracemalloc import Statistic
-
 from textual.app import App, ComposeResult
 from textual.widgets import Static
 
@@ -15,16 +13,14 @@ class DimensionApp(App):
     def compose(self) -> ComposeResult:
         self.widget = Static(TEXT)
         yield self.widget
-        self.widget2 = Static("This is another line of text")
+        self.widget2 = Static(TEXT)
         yield self.widget2
 
     def on_mount(self) -> None:
         self.widget.styles.background = "purple"
-        self.widget.styles.width = "50%"
-        self.widget.styles.height = "80%"
-        self.widget2.styles.background = "indigo"
-        self.widget2.styles.width = "60%"
-        self.widget2.styles.height = "20%"
+        self.widget.styles.background = "green"
+        self.widget.styles.height = "2fr"
+        self.widget2.styles.height = "1fr"
 
 if __name__ == "__main__":
     app = DimensionApp()

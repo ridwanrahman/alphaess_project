@@ -18,3 +18,18 @@ Textual has many commands that can be used to create TUI applications. Here are 
     `uv run watchfiles "textual run --dev docker_widget.py" .`
 
 
+## Styles tutorial
+
+1. Width and height
+    we can set the width and height but it restricts the number of
+    columns and rows that can be used in the layout.
+2. Auto dimensions
+    In practice, we would like the size of the widget to adapt
+    to its content. This is done by setting 'auto'.
+3. units
+    they allow you to specify dimensions relative to the screen or
+    container. it keeps those percentage propportions even when
+    the user resizes the terminal window.
+4. FR units
+
+
